@@ -33,7 +33,12 @@ var shows = function(count, callback) {
 				};
 			});
 
-			if (Object.keys(res).length >= count) return callback(null, res);
+			if (Object.keys(res).length >= count) {
+				res = Object.keys(res).sort().map(function(id) {
+					return res[id];
+				});
+				return callback(null, res);
+			}
 
 			onpage();
 		}));

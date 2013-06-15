@@ -9,34 +9,34 @@ tvcom is pretty straight forward. It has three methods, `shows`, `episodes`, `su
 
 ### shows(number, callback)
 
-Returns an array of the `number` most popular tv-shows. It's should noted that this list is not sorted
+Returns a sorted array of the `number` most popular tv-shows.
 
 ``` js
 var tvcom = require('tvcom');
 tvcom.shows(10, function(err, shows) { ... });
 
 /*
-{
-	'game-of-thrones': {
+[
+	{
 		id: 'game-of-thrones',
 		title: 'Game of Thrones',
 		icon: 'http://im0n.clkimg.com/i/sm/069/69088.jpg',
 		description: 'Game of Thrones is an ...'
 	},
- 	'greys-anatomy': {
+ 	{
  		id: 'greys-anatomy',
 		title: 'Grey\'s Anatomy',
 		icon: 'http://im1n.clkimg.com/i/sm/000/227.jpg',
 		description: 'Grey\'s Anatomy is a ...'
 	},
 	...
-}
+]
 */
 ```
 
 ### episodes(id, callback)
 
-Returns an array with all the seasons, with an array of all the episodes in that season.
+Returns an array with all the seasons, with an array of all the episodes of that season.
 
 ``` js
 var tvcom = require('tvcom');
