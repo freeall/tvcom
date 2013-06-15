@@ -8,18 +8,18 @@ request = request.defaults({
 var onresponse = function(onerror, callback) {
 	return function(err, response) {
 		if (err) return onerror(err);
+		if (response.statusCode !== 200) return onerror(
 		callback(cheerio.load(response.body), response);
 	};
 };
 var text = function($elem) {
-	return $elem.text().trim().replace('\r\n', '\n').replace(/moreless$/, '');
+	return $elem.text().trim().replace(/\r\n/g, '\n').replace(/moreless$/, '');
 };
 var shows = function(count, callback) {
 	var res = {};
 
 	var fetchPage = function(page, onpage) {
 		request.get('http://tv.com/shows/page'+page + '/', onresponse(callback, function($, response) {
-			console.log(1)
 			$('._bento .show').each(function(_, show) {
 				if (Object.keys(res).length >= count) return;
 
@@ -141,5 +141,3 @@ module.exports = {
 	episodes: episodes,
 	summary: summary
 };
-
-summary('greys-anatomy', function(err, res) { console.log(res)})
