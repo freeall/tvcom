@@ -96,7 +96,7 @@ tvcom.summary('game-of-thrones', function(err, summary) { ... });
 		{
 			name: 'Camilla Luddington',
 			role: 'Dr. Jo Wilson (Season 10+)',
-			icon: '//dw.com.com/clear/c.gif?sid=1003&ptid=6138'
+			icon: '//dw.com.com/clear/c.gif?sid=1003&ptid=6138',
 		},
 		...
 	],
@@ -108,8 +108,8 @@ tvcom.summary('game-of-thrones', function(err, summary) { ... });
 			icon: '//dw.com.com/clear/c.gif?sid=1003&ptid=6138',
 			comments: '7',
 			date: '10 hours ago',
-		    by: {
-		    	name: 'Tim Surette',
+			by: {
+				name: 'Tim Surette',
 				link: 'http://tv.com/news/author/TimSpot/'
 			}
 		},
@@ -134,6 +134,7 @@ tvcom.summary('game-of-thrones', function(err, summary) { ... });
 		},
 		...
 	]
+}
 */
 ```
 
