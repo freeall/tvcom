@@ -8,7 +8,7 @@ request = request.defaults({
 var onresponse = function(onerror, callback) {
 	return function(err, response) {
 		if (err) return onerror(err);
-		if (response.statusCode !== 200) return onerror(
+		if (response.statusCode !== 200) return onerror(new Error('wrong statuscode ', response.statusCode)); 
 		callback(cheerio.load(response.body), response);
 	};
 };
@@ -122,7 +122,7 @@ var summary = function(id, callback) {
 		});
 		$('.vid', $('.clips').last()).each(function(_, vid) {
 			var $vid = $(vid);
-			var dt = text($('.date_time', $vid)).match(/(.+\/.+\/.+)*\s*\((.*\:.+)\)/m);
+			var dt = text($('.date_time', $vid)).match(/(.+\/.+\/.+)*\s*\((.*\:.+)\)/m) || {}
 			res.clips.push({
 				icon: $('img', $vid).attr('src'),
 				link: 'http://tv.com'+$('.mask', $vid).attr('href'),
