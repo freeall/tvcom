@@ -15,6 +15,9 @@ var onresponse = function(onerror, callback) {
 var text = function($elem) {
 	return $elem.text().trim().replace(/\r\n/g, '\n').replace(/moreless$/, '');
 };
+var href = function(link) {
+	return link.replace(/^\/\//, 'http://');
+};
 var shows = function(count, callback) {
 	var res = {};
 
@@ -107,7 +110,7 @@ var summary = function(id, callback) {
 				teaser: text($('.info h5'), $news),
 				title: text($('.info .title'), $news),
 				link: 'http://tv.com' + $('.info .title a').attr('href'),
-				icon: $('img').attr('src'),
+				icon: href($('img').attr('src')),
 				comments: text($('.comment_count', $news)),
 				date: $('.byline', $news)[0].children[2].data.trim().replace(/^,\s/,''),
 				by: {
@@ -119,7 +122,7 @@ var summary = function(id, callback) {
 		$('.photos .photo').each(function(_, photo) {
 			var $photo = $(photo);
 			res.photos.push({
-				icon: $('img', $photo).attr('src'),
+				icon: href($('img', $photo).attr('src')),
 				link: 'http://tv.com'+$('.caption a', $photo).attr('href'),
 				title: text($('.caption a', $photo)),
 				credit: text($('.credit', $photo))
@@ -129,7 +132,7 @@ var summary = function(id, callback) {
 			var $vid = $(vid);
 			var dt = text($('.date_time', $vid)).match(/(.+\/.+\/.+)*\s*\((.*\:.+)\)/m) || {}
 			res.clips.push({
-				icon: $('img', $vid).attr('src'),
+				icon: href($('img', $vid).attr('src')),
 				link: 'http://tv.com'+$('.mask', $vid).attr('href'),
 				title: text($('.title', $vid)),
 				date: dt[1],
