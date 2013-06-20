@@ -17,7 +17,7 @@ var text = function($elem) {
 };
 var href = function(link) {
 	return link.replace(/^\/\//, 'http://');
-}
+};
 var shows = function(count, callback) {
 	var res = {};
 
