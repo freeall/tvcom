@@ -31,7 +31,7 @@ var shows = function(count, callback) {
 				res[id] = {
 					id: id,
 					title: text($('.info h4 a', $show)),
-					icon:  $('._image_container img', $show).attr('src'),
+					icon:  href($('._image_container img', $show).attr('src')),
 					description: text($('.info ._more_less', $show)),
 				};
 			});
@@ -101,7 +101,7 @@ var summary = function(id, callback) {
 			res.cast.push({
 				name: text($('.name', $person)),
 				role: text($('.role', $person)),
-				icon: $('img').attr('src')
+				icon: href($('img').attr('src'))
 			});
 		});
 		$('.latest_news ._story_capsule').each(function(_, news) {

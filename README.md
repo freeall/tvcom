@@ -96,7 +96,7 @@ tvcom.summary('game-of-thrones', function(err, summary) { ... });
 		{
 			name: 'Camilla Luddington',
 			role: 'Dr. Jo Wilson (Season 10+)',
-			icon: '//dw.com.com/clear/c.gif?sid=1003&ptid=6138',
+			icon: 'http://dw.com.com/clear/c.gif?sid=1003&ptid=6138',
 		},
 		...
 	],
@@ -105,7 +105,7 @@ tvcom.summary('game-of-thrones', function(err, summary) { ... });
 			teaser: 'TV IN DA CLUBUPFRONTS 2013',
 			title: 'News Briefs: Starz and 50 Cent Are Powering Up for a New DramaABC\'s 2013-2014 Schedule: S.H.I.E.L.D. on Tuesdays, Less DWTS, and OUAT \'s New Spinoff on Thursdays',
 			link: 'http://tv.com/news/news-briefs-starz-and-50-cent-are-powering-up-for-a-new-drama-137124191630/',
-			icon: '//dw.com.com/clear/c.gif?sid=1003&ptid=6138',
+			icon: 'http://dw.com.com/clear/c.gif?sid=1003&ptid=6138',
 			comments: '7',
 			date: '10 hours ago',
 			by: {
